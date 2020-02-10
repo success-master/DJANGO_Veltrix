@@ -1,0 +1,43 @@
+{% extends 'request/base.html'%}
+{% load static %}
+{% block content %}
+<div class="content pt-3">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="card">
+          <div class="card-body">
+            <form class="" action="" method="post">
+              {% csrf_token %}
+              <fieldset class="form-group">
+              <h4>Are you sure you want to delete this request?</h4>
+              </fieldset>
+              <p>{{request.content}}</p>
+              <div class="form-group">
+                <button class="btn btn-outline-danger " type="submit">Yes, Delete</button>
+                <a class="btn btn-outline-secondary " href="{% url 'dashboard' %}">Cancel</a>
+
+
+              </div>
+            </form>
+          </div>
+          </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="card bg-warning">
+            <div class="card-body text">
+
+                <h4 class="mt-0 header-title">CAUTION</h4>
+              <p>Once a request is deleted, it can never be recovered!</p>
+
+            </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+{% endblock content %}

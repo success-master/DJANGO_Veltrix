@@ -1,0 +1,73 @@
+{% extends 'request/base.html'%}
+{% load static %}
+
+{% block content %}
+            <div class="">
+                <!-- Start content -->
+                <div class="content">
+                    <div class="container-fluid">
+                        <div class="page-title-box">
+                            <div class="row align-items-center">
+                                <div class="col-sm-6">
+                                    <h4 class="page-title">OUTGOING - In Progress Requests</h4>
+
+                                </div>
+
+                            </div> <!-- end row -->
+                        </div>
+                        <!-- end page-title -->
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <table id="datatable" class="table table-striped dt-responsive nowrap table-vertical" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                                            <thead>
+                                            <tr>
+                                                <th>Request ID</th>
+                                                <th>Date Requested</th>
+                                                <th>Details</th>
+                                                <th>Assigned To</th>
+                                                <th>Time Complete</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                              {% for request in out_complete %}
+                                                <tr>
+                                                    <td>
+                                                        <a href="#" class="font-500">{{request.ref_code}}</a>
+                                                    </td>
+                                                    <td>{{request.date_posted |date:"d M, P"}}</td>
+                                                    <td>{{request.content|truncatechars:40}}</td>
+                                                    <td><span class="badge badge-soft-success">{{request.assign_to}}</span></td>
+                                                    <!-- {% if request.author == user %} -->
+                                                    <td>
+                                                    {{request.time_edited}} by {{request.editor}}
+
+
+                                                </td>
+                                                    <!-- {% endif %} -->
+                                                </tr>
+                                                {% endfor %}
+
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end row -->
+
+                    </div>
+                    <!-- container-fluid -->
+
+                </div>
+                <!-- content -->
+
+                <!-- <footer class="footer">
+                    © 2019 Veltrix <span class="d-none d-sm-inline-block"> - Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesbrand</span>.
+                </footer> -->
+
+            </div>
+{% endblock content %}

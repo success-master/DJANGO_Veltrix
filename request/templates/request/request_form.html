@@ -1,0 +1,38 @@
+{% extends "request/base.html"%}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="card">
+   <div class="card-body">
+
+       <h4 class="mt-0 header-title">Select2</h4>
+       <p class="text-muted mb-4">A mobile and touch friendly input spinner component for Bootstrap</p>
+
+
+       <div class="card-body">
+
+        <h4 class="mt-0 header-title">Initiate Request</h4>
+
+
+        <form class="" action="" method="post">
+          {% csrf_token %}
+          <div class="mt-3">
+              <!-- <label>textareas</label> -->
+              <p class="text-muted mb-2">
+                  Enter clearly the request details below then assign a responsible department
+              </p>
+              <textarea name="content" id="textarea" class="form-control" maxlength="500" rows="3" placeholder="Type your request here"></textarea>
+          </div>
+          {{ form.assign_to }}
+          <button class="btn btn-primary w-lg" type="submit" name="button">Sumbit</button>
+        </form>
+
+
+    </div>
+
+   </div>
+</div>
+
+{% endblock content %}

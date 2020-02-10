@@ -1,0 +1,62 @@
+{% extends "request/base.html"%}
+{% load crispy_forms_tags %}
+
+{% load static %}
+{% block content %}
+<div class="content pt-3">
+    <div class="container-fluid">
+<div class="row">
+                           <div class="col-lg-8">
+
+
+
+                               <div class="card">
+                                   <div class="card-body">
+
+
+                                                                  <form class="" action="" method="post">
+                                                                    {% csrf_token %}
+                                                                    <div class="mt-3">
+                                                                        <!-- <label>textareas</label> -->
+                                                                        <p class="text-muted mb-2">
+                                                                            Enter clearly the request details below then assign a responsible department
+                                                                        </p>
+                                                                        <!-- <textarea name="content" id="textarea" class="form-control" maxlength="500" rows="3" placeholder="Type your request here"></textarea> -->
+                                                                    </div>
+
+                                                                    {{form }}
+                                                                    <button class="btn btn-primary w-lg" type="submit" name="button">Sumbit</button>
+                                                                  </form>
+
+                                   </div>
+                               </div>
+                           </div>
+                           <div class="col-lg-4">
+                               <div class="card">
+                                   <div class="card-body">
+
+                                       <h4 class="mt-0 header-title">Hint!</h4>
+                                       <p class="text-muted">Add <code class="highlighter-rouge">data-toggle="button"</code>
+                                           to toggle a button’s <code class="highlighter-rouge">active</code>
+                                           state. If you’re pre-toggling a button, you must manually add the <code
+                                                   class="highlighter-rouge">.active</code> class
+                                           <strong>and</strong> <code
+                                                   class="highlighter-rouge">aria-pressed="true"</code> to the
+                                           <code class="highlighter-rouge">&lt;button&gt;</code>.
+                                       </p>
+
+                                       <div class="button-items">
+                                           <button type="button" class="btn btn-primary waves-effect waves-light" data-toggle="button" aria-pressed="false">
+                                               Single toggle
+                                           </button>
+
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
+
+                       </div>
+                       </div>
+                       </div>
+
+{% endblock content %}
