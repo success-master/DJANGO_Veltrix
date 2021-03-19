@@ -17,7 +17,7 @@ daphne==2.4.0
 Django==3.0
 django-crispy-forms==1.8.1
 django-filter==2.2.0
-djangorestframework==3.10.3
+djangorestframework==3.11.2
 firebase-admin==3.2.1
 gcloud==0.17.0
 google-api-core==1.16.0
